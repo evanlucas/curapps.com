@@ -68,6 +68,7 @@ module.exports = function(config) {
     res.locals.title = 'curapps'
     res.locals.port = config.port;
     res.locals.pages = config.app.pages
+    res.locals.env = process.env.NODE_ENV || 'development'
     res.locals.isActive = function (link) {
       return req.url === link ? 'active' : ''
     }
