@@ -129,7 +129,7 @@ module.exports = function(grunt) {
     })
   })
   
-  grunt.registerTask('dist', ['uglify'])
-  grunt.registerTask('test', ['modverify', 'cafemocha'])
+  grunt.registerTask('dist', ['clean', 'uglify'])
+  grunt.registerTask('test', ['dist', 'modverify', 'cafemocha'])
   grunt.registerTask('default', 'test')
 }
