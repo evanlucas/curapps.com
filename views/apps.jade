@@ -1,0 +1,18 @@
+extends layouts/default
+- apps = (typeof apps != 'undefined') ? apps : {}
+- meta = (typeof meta != 'undefined') ? meta : {}
+block pageTitle
+  title curapps | apps
+block metaDesc
+  meta(name='description', content=meta.description)
+block metaKeywords
+  meta(name='keywords', content=meta.keywords)
+block mainContent
+  h3 apps
+  ul.thumbnails.apps-thumbnails
+    - each app in apps
+      li.span4
+        a(href=app.url).thumbnail
+          h5 #{app.name}
+          img(src=app.largeimg)
+          br

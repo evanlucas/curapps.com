@@ -1,0 +1,36 @@
+extends layouts/default
+block pageTitle
+  title curapps | blog - #{post.title}
+block metaDesc
+  meta(name='description', content=post.meta.description)
+block metaKeywords
+  meta(name='keywords', content=post.meta.keywords)
+block extraStyles
+  link(rel='stylesheet', href='/css/code.css')
+
+block mainContent
+  .row-fluid
+    .span3
+      ul.nav.nav-list.well
+        li.nav-header Categories
+        - each ct in cats
+          li
+            a(href='/blog/categories/'+ct) #{ct}
+      .clearfix
+    .span8
+      .row-fluid
+        .post
+          h4= post.title
+
+          != content
+        hr
+        p.author
+          span !{post.author}
+        .date
+          span Posted on #{post.createdAt}
+        if (post.categories)
+
+          each cat in post.categories
+            a(href='/blog/categories/'+cat).label.label-info #{cat}
+      .row-fluid
+        br

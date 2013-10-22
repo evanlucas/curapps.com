@@ -1,0 +1,9 @@
+{
+  "name": "bootstrap",
+  "version": "0.0.0",
+  "commit": "efd7e782c910ccc5a5769d1613972151cb5fc3aa",
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.com:web/bootstrap.git"
+  }
+}

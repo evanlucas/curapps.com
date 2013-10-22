@@ -1,0 +1,226 @@
+html, body {
+  height: 100%;
+}
+body {
+  background: url('../img/419.png') repeat;
+}
+
+.footer-icons {
+  text-align: center;
+  margin-bottom: 2px;
+}
+
+.footer-icons a {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 50px;
+  color: #333;
+}
+.footer-icons a:hover {
+  color: #086fa1;
+  text-decoration: none;
+  cursor: pointer;
+}
+.footer-icons a i {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+#wrap {
+  min-height: 100%;
+}
+#main {
+  overflow: auto;
+  padding-bottom: 80px;
+}
+#push, #footer {
+  height: 80px;
+}
+#footer {
+  margin-top: -80px;
+  position: relative;
+  clear: both;
+  color: #333;
+}
+.err {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+}
+.err i {
+  font-size: 200px;
+  color: red;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+  padding-bottom: 50px;
+}
+
+.err h1, .error h2, .error h3 {
+  color: #333;
+}
+
+p.error {
+  color: red;
+  text-align: left;
+}
+
+a.title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.author a, .comment a {
+  font-weight: bold;
+}
+
+#mainContent {
+  margin-top: 100px;
+}
+
+@media (max-width: 767px) {
+  #mainContent {
+    margin-top: 0;
+  }
+}
+@media (max-width: 480px) {
+  #mainContent {
+    margin-top: 0;
+  }
+}
+@media (max-width: 979px) {
+  #mainContent {
+    margin-top: 0;
+  }
+}
+
+::selection, ::-moz-selection {
+  color: white;
+  background: #086fa1;
+}
+
+ul.apps-thumbnails h5, ul.apps-thumbnails li a h5 {
+  text-align: center;
+}
+.website {
+  margin-bottom: 10px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.app-desc {
+  margin-top: 30px;
+}
+.app-desc p {
+  font-size: 16px;
+}
+.app-desc .getapp {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 30px;
+}
+.app-img {
+  float: left;
+}
+.app-img img {
+  max-height: 500px;
+}
+@media (max-width: 767px) {
+  .app-desc {
+    margin-left: 0;
+  }
+  .app-img {
+    float: none;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (max-width: 480px) {
+  .app-desc {
+    clear: both;
+    margin-left: 0;
+  }
+  .app-img {
+    float: none;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  a.brand img {
+    max-width: 230px;
+    margin-top: 3px;
+  }
+}
+@media (min-width: 979px) {
+  .app-img {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+}
+@media (max-width: 979px) {
+  .app-desc {
+    clear: both;
+    margin-left: 0;
+  }
+  .app-img {
+    float: none;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .span5 {
+    width: 100%;
+  }
+  .span6 {
+    width: 100%;
+  }
+}
+p.supported {
+  font-style: italic;
+}
+.getapp {
+  min-height: 40px;
+  min-width: 135px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.getapp a.appstore {
+  margin-left: auto;
+  margin-right: auto;
+  height: 40px;
+  min-height: 40px;
+  width: 135px;
+  min-width: 135px;
+  background-image: url('../img/appstore.png');
+  background-image: none, url('../img/appstore.svg'), url('../img/appstore.png');
+  background-size: 100% 100%;
+  display: block;
+}
+
+#iconhand i {
+  vertical-align: middle;
+}
+
+.jumbotron {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.homepage {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+a.brand img {
+  width: 282px;
+}

@@ -1,0 +1,27 @@
+extends layouts/default
+- app = (typeof app != 'undefined') ? app : {}
+block pageTitle
+  title curapps | apps - #{app.name}
+block metaDesc
+  meta(name='description', content=app.meta.description)
+block metaKeywords
+  meta(name='keywords', content=app.meta.keywords)
+block mainContent
+  .row
+    .app-detail.span12
+      h3 #{app.name}
+      .span5
+        div.app-img
+          img(src=app.img)
+      div.span6
+        .app-desc
+          p !{app.desc}
+          p.supported Supports #{app.supported}
+          - if (app.storeType == 'cydia')
+            .getapp
+              a(href=app.storeUrl, target="_blank").btn.btn-primary Download on Cydia
+          - else if (app.storeType == 'appstore')
+            .getapp
+              a(href=app.storeUrl, target="_blank").appstore
+          - else
+            .getapp

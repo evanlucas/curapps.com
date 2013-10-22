@@ -1,0 +1,9 @@
+extends ../layouts/error
+
+block icon-block
+  i.icon-exclamation-sign
+
+block message
+  h2 Something's gone wrong (500)
+  h3 This is typically the result of a server error
+    i.icon-spin.icon-spinner(style='font-size: 20px; line-height: 20px; display: inline-block; margin: 0; padding: 0; margin-left: 4px;')

@@ -1,0 +1,10 @@
+extends layouts/default
+- site = (typeof site != 'undefined') ? site : {}
+block pageTitle
+  title curapps | web - #{site.name}
+block mainContent
+  .row
+    .website
+      a(href=site.url)
+        h3 #{site.name}
+      img(src=site.img).img-rounded

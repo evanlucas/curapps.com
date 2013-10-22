@@ -1,0 +1,37 @@
+extends layouts/default
+block pageTitle
+  title curapps
+block metaDesc
+  meta(name='description', content='Curapps is a company located in Hattiesburg, MS that is dedicated to developing advanced iOS applications, web services, and websites.')
+block metaKeywords
+  meta(name='keywords', content='hattiesburg, apps, iphone, web services, websites')
+block mainContent
+  .homepage
+    .row
+      .jumbotron
+        img(src='/img/Masthead.png')
+      p.lead Innovative development for mobile friendly applications.
+    .row
+      .span4
+        h4 Apps
+        p We specialize in custom iOS development to create a solution that fits your needs.  We can help effectively grow your business.  Whether it be a custom app for in-house use only, or an application you wish to have released on the App Store, we can help.  Contact us today for a free quote.
+        a(href='/quote').btn.btn-primary Request Quote
+      .span4
+        h4 Hosting
+        p Our web hosting comes at a competitive price on powerful servers that maintain 99.99% uptime.  Our hosting comes with free email that is accessible from any email client as well as a sleek webmail interface that can be custom branded for you.
+        p.help-block *Restrictions may apply
+  
+        a(href='/quote').btn.btn-primary Request Quote
+      .span4
+        h4 Web
+        p We provide custom development for web services and websites. Our specialty is API development.  We use the latest technologies to make sure that your site/service runs at the most efficient level possible.
+        a(href='/quote').btn.btn-primary Request Quote
+    .row
+      .span6
+        h4 Consulting
+        p Curapps offers consulting for both web and application development.  Whether it be just a general question or something quite specific, we are here to help.  We are well versed in server configuration, software development, application development, and hosting for both static websites and web applications.
+        a(href='/quote').btn.btn-primary Request Quote
+      .span6
+        h4 Email
+        p Looking for highly reliable email with API access? You've come to the right place.  Our email services offer 99.99% uptime with API access to create mailboxes, routes, and custom mailing lists.  For basic email, our prices start at $15/month for 5 mailboxes with unlimited storage.  For more advanced configuration, please contact us by clicking the button below.
+        a(href='/quote').btn.btn-primary Request Quote

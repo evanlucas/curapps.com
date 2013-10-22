@@ -1,0 +1,43 @@
+extends layouts/default
+- status = typeof(status) != 'undefined' ? status : {}
+- meta = (typeof meta != 'undefined') ? meta : {}
+
+block extraStyles
+  link(rel='stylesheet', href='/alertify.js/themes/alertify.core.css')
+  link(rel='stylesheet', href='/alertify.js/themes/alertify.default.css')
+
+block pageTitle
+  title curapps | contact
+block metaDesc
+  meta(name='description', content='Curapps is here to meet your needs.  Contact us today!')
+block metaKeywords
+  meta(name='keywords', content='hattiesburg, mississippi, contact, software, development')
+block mainContent
+  h3 contact
+  form.form-signin
+    .pholder
+    .control-group#name-cg
+      label.control-label(for='name') Name
+      .controls
+        input(type='text', name="name", placeholder='Name').input-block-level
+
+    .control-group
+      label.control-label(for='phone') Phone
+      .controls
+        input(type='text', name="phone", placeholder='Phone').input-block-level
+    .control-group#email-cg
+      label.control-label(for='email') Email
+      .controls
+        input(type='text', name='email', placeholder='Email').input-block-level
+    .control-group
+      label.control-label(for='desc') Description
+      .controls
+        textarea#desc(name='desc', rows="4").input-block-level
+
+    .control-group
+      button#submitBtn(type='submit', data-loading-text="Submitting").btn.btn-primary.btn-large Submit
+
+block extraScripts
+  script(type='text/javascript', src='/socket.io/socket.io.js')
+  script(type='text/javascript', src='/alertify.js/lib/alertify.min.js')
+  script(type='text/javascript', src='/js/contact.js')

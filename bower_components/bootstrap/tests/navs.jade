@@ -1,0 +1,29 @@
+include head.jade
+style
+	td {
+		height: 60px;
+	}
+	.anicon i {
+		margin-left: 5px;
+		font-size: 55px;
+		float: left;
+		margin-right: 4px;
+	}
+	.anicon:hover {
+		color: red;
+	}
+	.anicon i:hover {
+		font-size: 55px;
+		color: red;
+	}
+	.anicon p {
+		margin: 0;
+		padding: 0;
+		float: left;
+		font-size: 14px;
+	}
+div(style='margin-top:80px').container
+	.span12
+		h1 Navs
+		include navs-gen.jade
+include foot.jade

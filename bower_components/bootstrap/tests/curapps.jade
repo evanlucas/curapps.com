@@ -1,0 +1,64 @@
+doctype 5
+html
+	head
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		title curapps
+		meta(name="description", content="Curapps is a company located in Hattiesburg, MS that is dedicated to developing advanced iOS applications, web services, and websites.")
+		meta(name="keywords", content="hattiesburg, apps, iphone, web services, websites")
+		link(rel="stylesheet", href='./css/bootstrap.css')
+		link(rel='stylesheet', href='./css/bootstrap-responsive.css')
+	body
+		div.navbar.navbar-fixed-top
+			div.navbar-inner
+				div.container
+					a(data-toggle="collapse", data-target=".nav-collapse").btn.btn-navbar
+						div#iconhand
+							i.icon-chevron-down
+					a(href='http://curapps.com').brand
+						img(src='/img/HeaderLogo.png')
+					div.nav-collapse
+						ul.nav.icons-nav
+							li.divider-vertical
+							li
+								a(href="/apps")
+									i.icon-mobile-phone
+									p apps
+							li.divider-vertical
+							li
+								a(href="/web")
+									i.icon-globe
+									p web
+							li.divider-vertical
+							li
+								a(href="/support")
+									i.icon-envelope
+									p support
+							li.divider-vertical
+							li
+								a(href='/blog')
+									i.icon-comments-alt
+									p blog
+							li.divider-vertical
+							li
+								a(href="http://twitter.com/evanhlucas")
+									i.icon-twitter
+									p twitter
+							li.divider-vertical
+							li
+								a(href="http://github.com/evanlucas")
+									i.icon-github-alt
+									p github
+							li.divider-vertical
+		div(style='margin-top:100px').container-fluid
+			.row-fluid
+				.span2
+					ul.nav.nav-pills.nav-stacked
+						li.active
+							a(href='#') Home
+						li
+							a(href='#') Profile
+						li
+							a(href='#') Messages
+				.span10
+					.well
+include foot

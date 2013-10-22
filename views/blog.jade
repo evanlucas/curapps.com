@@ -1,0 +1,50 @@
+- posts = typeof(posts) != 'undefined' ? posts : {}
+extends layouts/default
+- meta = (typeof meta != 'undefined') ? meta : {}
+- cats = (typeof cats != 'undefined') ? cats : {}
+block pageTitle
+  title curapps | blog
+block metaDesc
+  meta(name='description', content=meta.description)
+block metaKeywords
+  meta(name='keywords', content=meta.keywords)
+block mainContent
+  if (typeof(categoryTitle) != 'undefined')
+    h3= categoryTitle
+  else
+    h3 blog
+
+  if (posts.length == 0)
+    .post
+      h4 Nothing's been posted yet!
+      p Email the author and tell him/her to post something!!!
+  .span3
+    ul.nav.nav-list.well
+      li.nav-header Categories
+      - each cat in cats
+        li
+          a(href='/blog/categories/'+cat) #{cat}
+    .clearfix
+  .span8
+    hr
+    each post in posts
+      .post
+        a.title(href='/blog/posts/'+post.id, title=post.title) #{post.title}
+        p!= post.preview
+        br
+        .author
+          span #{post.createdAt} | !{post.author}
+        br
+        .pull-right
+          a(href='/blog/posts/'+post.id).btn.btn-primary Read More
+        if (post.categories)
+          each cat in post.categories
+            a(href='/blog/categories/'+cat).label.label-info #{cat}
+
+      hr
+
+    if (pages > 1)
+      .pagination
+        ul
+          != createPagination(pages, page)
+    div.clearfix

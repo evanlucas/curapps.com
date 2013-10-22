@@ -1,0 +1,17 @@
+div.navbar.navbar-fixed-top
+  div.navbar-inner
+    div.container
+      a(data-toggle="collapse", data-target=".nav-collapse").btn.btn-navbar
+        div#iconhand
+          i.icon-chevron-down
+      a(href='http://curapps.com').brand
+        img(src='/bootstrap/assets/img/logo.png')
+      div.nav-collapse
+        ul.nav.icons-nav
+          li.divider-vertical
+          each p in pages
+            li
+              a(href=p.href)
+                i(class=p.icon)
+                p= p.title
+            li.divider-vertical
