@@ -11,7 +11,7 @@ module.exports = function(grunt) {
     banner: '/**\n' +
             ' * curapps.com v<%= pkg.version %>\n' +
             ' * Copyright <%= grunt.template.today("yyyy") %> <%= pkg.author %>\n' +
-            ' * Licensed under <%= _.pluck(pkg.licenses, "url").join(", ") %>\n' +
+            ' * Licensed under the <%= pkg.license %> license\n' +
             ' */\n',
     cafemocha: {
       http: {
@@ -50,7 +50,9 @@ module.exports = function(grunt) {
     clean: ['public/js/min'],
     
     modverify: {
-      options: {}
+      main: {
+        options: {}
+      }
     }
   })
 
