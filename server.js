@@ -45,7 +45,12 @@ app.config = config
 
 require('./config/express')(app)
 require('./config/router')(app)
-io = require('socket.io').listen(server)
+var io = require('socket.io').listen(server)
+
+if (env === 'production') {
+  io.set('log level', 1)
+}
+
 var port = config.port
 server.listen(port)
 new (require('./config/sockets'))(app, io)
