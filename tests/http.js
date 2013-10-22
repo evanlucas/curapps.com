@@ -36,6 +36,7 @@ var routes = [
   , '/blog/categories/launchctl'
   , '/web/rec'
   , '/web/plaidrhino'
+  , '/sitemap.xml'
 ]
 
 describe('curapps http server', function() {
@@ -108,6 +109,20 @@ describe('curapps http server', function() {
             })
           })
         })
+      
+      if (fs.existsSync(path.join(__dirname, '../public/js/min'))) {
+        fs.readdirSync(path.join(__dirname, '../public/js/min'))
+          .filter(function(file) {
+            return path.extname(file) === '.js'
+          })
+          .forEach(function(file) {
+            describe('GET /js/min/'+file, function() {
+              it('Should return 200', function(done) {
+                request.get('/js/min/'+file).expect(200, done)
+              })
+            })
+          })
+      }
     })
   })
 })
