@@ -24,6 +24,8 @@ module.exports = function(grunt) {
       }
     },
     
+    env: grunt.option('env') || 'development',
+    
     uglify: {
       options: {
         report: 'min',
