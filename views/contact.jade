@@ -3,8 +3,8 @@ extends layouts/default
 - meta = (typeof meta != 'undefined') ? meta : {}
 
 block extraStyles
-  link(rel='stylesheet', href='/alertify.js/themes/alertify.core.css')
-  link(rel='stylesheet', href='/alertify.js/themes/alertify.default.css')
+  +css('/alertify.js/themes/alertify.core.css')
+  +css('/alertify.js/themes/alertify.default.css')
 
 block pageTitle
   title curapps | contact
@@ -38,6 +38,9 @@ block mainContent
       button#submitBtn(type='submit', data-loading-text="Submitting").btn.btn-primary.btn-large Submit
 
 block extraScripts
-  script(type='text/javascript', src='/socket.io/socket.io.js')
-  script(type='text/javascript', src='/alertify.js/lib/alertify.min.js')
-  script(type='text/javascript', src='/js/contact.js')
+  +js('/socket.io/socket.io.js')
+  +js('/alertify.js/lib/alertify.min.js')
+  - if (env && env === 'production')
+    +js('/js/min/contact.js')
+  - else
+    +js('/js/contact.js')

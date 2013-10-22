@@ -1,13 +1,16 @@
 #footer
-	.container.footer-icons
-		a(href='http://twitter.com/evanhlucas', rel='tooltip', data-title='Follow on Twitter', data-placement='top', data-trigger='hover')
-			i.icon-twitter
-		a(href='http://github.com/evanlucas', rel='tooltip', data-title='Open source on Github', data-placement='top', data-trigger='hover')
-			i.icon-github-alt
-	.container
-		.pull-left
-			p &#169; 2012-2013 | <a href='/contact'>curapps</a> | all rights reserved
-script(type='text/javascript', src='/bootstrap/assets/js/jquery.js')
-script(type='text/javascript', src='/bootstrap/assets/js/bootstrap.js')
-script(type='text/javascript', src='/bootstrap/assets/js/retina.js')
-script(type='text/javascript', src='/js/style.js')
+  .container.footer-icons
+    a(href='http://twitter.com/evanhlucas', rel='tooltip', data-title='Follow on Twitter', data-placement='top', data-trigger='hover')
+      i.icon-twitter
+    a(href='http://github.com/evanlucas', rel='tooltip', data-title='Open source on Github', data-placement='top', data-trigger='hover')
+      i.icon-github-alt
+  .container
+    .pull-left
+      p &#169; 2012-2013 | <a href='/contact'>curapps</a> | all rights reserved
++js('/bootstrap/assets/js/jquery.js')
++js('/bootstrap/assets/js/bootstrap.min.js')
++js('/bootstrap/assets/js/retina.js')
+- if (env && env === 'production')
+  +js('/js/min/style.js')
+- else
+  +js('/js/style.js')

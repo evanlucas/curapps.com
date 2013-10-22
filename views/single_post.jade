@@ -6,7 +6,7 @@ block metaDesc
 block metaKeywords
   meta(name='keywords', content=post.meta.keywords)
 block extraStyles
-  link(rel='stylesheet', href='/css/code.css')
+  +css('/css/code.css')
 
 block mainContent
   .row-fluid
