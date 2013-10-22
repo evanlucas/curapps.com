@@ -1,3 +1,10 @@
+/*!
+ * Most of the functions on this page come from 
+ * https://github.com/madhums/node-express-mongoose-demo/blob/8605ecfdcae0c762850bff8def65f8373bf826f6/config/middlewares/view.js
+ *
+ * Thanks madhums
+ */
+
 /**
  * Pagination helper
  *
