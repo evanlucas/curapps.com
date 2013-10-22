@@ -7,7 +7,7 @@
     "test": "jake test"
   },
   "author": "Evan Lucas",
-  "license": "BSD",
+  "license": "MIT",
   "dependencies": {
     "mocha": "~1.11.0",
     "express": "~3.3.1",
@@ -19,7 +19,6 @@
     "mongoose": "~3.6.13",
     "moment": "~2.0.0",
     "debug": "~0.7.2",
-    "namp": "~0.2.25",
     "socket.io": "~0.9.16",
     "nodemailer": "~0.5.0",
     "underscore": "~1.5.1",
@@ -28,10 +27,10 @@
     "redis": "~0.9.0",
     "connect-redis": "~1.4.5",
     "winston": "~0.7.2",
-    "grunt": "~0.4.1",
     "highlight.js": "~7.3.0"
   },
   "devDependencies": {
+    "grunt": "~0.4.1",
     "grunt-cafe-mocha": "~0.1.9",
     "supertest": "~0.8.0",
     "grunt-contrib-uglify": "~0.2.4",
