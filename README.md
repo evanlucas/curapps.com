@@ -1,5 +1,9 @@
 ### curapps.com
 
+
+[![Build Status](https://travis-ci.org/evanlucas/curapps.com.png?branch=master)](https://travis-ci.org/evanlucas/curapps.com)
+
+
 #### Requirements
 - Node.js (v0.10.x)+
 
