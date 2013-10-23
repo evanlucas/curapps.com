@@ -6,6 +6,7 @@
 
 #### Requirements
 - Node.js (v0.10.x)+
+- MongoDB (v2.2)+
 
 #### Installation
 
