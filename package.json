@@ -4,7 +4,7 @@
   "description": "curapps website",
   "main": "server.js",
   "scripts": {
-    "test": "jake test"
+    "test": "grunt test"
   },
   "author": "Evan Lucas",
   "license": "MIT",
