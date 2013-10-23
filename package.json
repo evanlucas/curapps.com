@@ -35,6 +35,6 @@
     "supertest": "~0.8.0",
     "grunt-contrib-uglify": "~0.2.4",
     "grunt-contrib-clean": "~0.5.0",
-    "grunt-modverify": "0.0.2"
+    "grunt-modverify": "0.0.3"
   }
 }
