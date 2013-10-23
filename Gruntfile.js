@@ -23,9 +23,9 @@ module.exports = function(grunt) {
         }
       }
     },
-    
+
     env: grunt.option('env') || 'development',
-    
+
     uglify: {
       options: {
         report: 'min',
@@ -48,12 +48,17 @@ module.exports = function(grunt) {
         dest: 'public/js/min/support.js'
       }
     },
-    
+
     clean: ['public/js/min'],
-    
+
     modverify: {
       main: {
-        options: {}
+        options: {
+          excludes: [
+              './config-priv'
+            , '../config/config-priv'
+          ]
+        }
       }
     }
   })
@@ -62,7 +67,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-modverify')
   grunt.loadNpmTasks('grunt-contrib-uglify')
   grunt.loadNpmTasks('grunt-contrib-clean')
-  
+
   grunt.registerTask('install', 'Install upstart configuration', function() {
     var done = this.async()
     grunt.log.write('Writing Upstart Configuration...')
@@ -128,7 +133,7 @@ module.exports = function(grunt) {
       server.kill()
     })
   })
-  
+
   grunt.registerTask('dist', ['clean', 'uglify'])
   grunt.registerTask('test', ['dist', 'modverify', 'cafemocha'])
   grunt.registerTask('default', 'test')
