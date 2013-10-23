@@ -53,4 +53,4 @@ ctl.load('/Users/evan/Library/LaunchAgents/homebrew.mxcl.mongodb.plist', functio
 })
 ```
 
-node-launchctl offers both sync and async functions for most of launchctl's functionality.  The source is available on Github at [https://github.com/evanlucas/node-launchctl](https://github.com/evanlucas/node-launchctl).
+node-launchctl offers both sync and async functions for most of launchctl's functionality.  The source is available on Github at [https://github.com/evanlucas/node-launchctl](https://github.com/evanlucas/node-launchctl) and you can check out the documentation at [http://evanlucas.github.io/node-launchctl](http://evanlucas.github.io/node-launchctl).
