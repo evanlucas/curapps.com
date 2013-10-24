@@ -1,6 +1,6 @@
 ### curapps.com
 
-
+#### Status
 [![Build Status](https://travis-ci.org/evanlucas/curapps.com.png?branch=master)](https://travis-ci.org/evanlucas/curapps.com)
 
 
