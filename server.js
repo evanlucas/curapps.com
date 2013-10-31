@@ -26,10 +26,10 @@ require('strong-agent').profile(
   , [config.app.name, config.hostname, processNumber]
 )
 
-var express = require('express')
-  , fs = require('fs')
+var express  = require('express')
+  , fs       = require('fs')
   , mongoose = require('mongoose')
-  , moment = require('moment')
+  , moment   = require('moment')
 
 mongoose.connect(config.db)
 require('./models/request')
