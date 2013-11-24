@@ -10,6 +10,11 @@ WEB.sites = {
     name: 'The Plaid Rhino',
     url: '/web/plaidrhino',
     img: '/img/PlaidRhinoWebsite.png'
+  },
+  mostlymacies: {
+    name: 'Mostly Macie\'s',
+    url: 'http://mostlymacies.com',
+    img: '/img/MostlyMaciesWebsite.png'
   }
 };
 
