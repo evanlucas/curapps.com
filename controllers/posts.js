@@ -3,14 +3,7 @@ var fs      = require('fs')
   , marked  = require('marked')
   , hljs    = require('highlight.js')
   , _       = require('underscore')
-  , winston = require('winston')
   , config
-
-var logger = new (winston).Logger({
-  transports: [
-    new winston.transports.Console({ colorize: true, level: 'info' })
-  ]
-})
 
 try {
   config = require('../config/config-priv.js')[env]
@@ -143,25 +136,27 @@ POSTS.renderByIndex = function(req, res) {
 
   if (currentPost) {
     var postPath = config.posts_path+'/'+currentPost.filename
-    if (!fs.existsSync(postPath)) {
-      return res.render('errors/404', {
-        title: 'Cannot find post titled '+currentPost.title
-      })
-    } else {
-      var postContent = fs.readFileSync(postPath, 'utf8')
-      marked(postContent, opts, function(err, content) {
-        if (err) {
-          logger.error('Error converting markdown to html:', err)
-          return res.render('errors/500')
-        } else {
-          res.render('single_post', {
-              content: content
-            , post: currentPost
-            , cats: POSTS.getCategories()
-          })
-        }
-      })
-    }
+    fs.exists(postPath, function(e) {
+      if (!e) {
+        return res.render('errors/404', {
+          title: 'Cannot find post titled '+currentPost.title
+        })
+      } else {
+        var postContent = fs.readFileSync(postPath, 'utf8')
+        marked(postContent, opts, function(err, content) {
+          if (err) {
+            console.error('posts', 'Error converting markdown to html:', err)
+            return res.render('errors/500')
+          } else {
+            res.render('single_post', {
+                content: content
+              , post: currentPost
+              , cats: POSTS.getCategories()
+            })
+          }
+        })
+      }
+    })
   }
 }
 

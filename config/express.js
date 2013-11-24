@@ -49,7 +49,7 @@ module.exports = function(app) {
     app.use(function(err, req, res, next) {
       if (~err.message.indexOf('not found')) return next()
 
-      app.log.error(err.stack)
+      app.log.error('500', err.stack)
 
       res.status(500).render('errors/500', { error: err.stack })
     })

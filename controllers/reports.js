@@ -18,7 +18,7 @@ exports.record = function(req, res, next) {
 
     r.save(function(err) {
       if (err) {
-        console.log('Error saving page request', err)
+        console.log('reports', 'Error saving page request', err)
         return next()
       } else {
         return next()
