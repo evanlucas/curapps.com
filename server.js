@@ -7,11 +7,12 @@ var env           = process.env.NODE_ENV || 'development'
 var log = require('npmlog')
 log.heading = 'curapps'
 
-
-console.log = log.info.bind(log)
-console.error = log.error.bind(log)
-console.info = log.verbose.bind(log)
-console.warn = log.warn.bind(log)
+if (require.main === module) {
+  console.log = log.info.bind(log)
+  console.error = log.error.bind(log)
+  console.info = log.verbose.bind(log)
+  console.warn = log.warn.bind(log)
+}
 
 try {
   config = require('./config/config-priv.js')[env]
@@ -20,13 +21,6 @@ try {
 catch (e) {
   config = require('./config/config')[env]
 }
-
-
-log.info('Setting up strong-agent')
-require('strong-agent').profile(
-    config.nodefly
-  , [config.app.name, config.hostname, processNumber]
-)
 
 var express  = require('express')
   , fs       = require('fs')
@@ -59,6 +53,6 @@ new (require('./config/sockets'))(app, io)
 var date = moment().format('MMM Do, YYYY [at] hh:mm:ss A')
 log.info('listen', port.toString(), date.cyan)
 
-if (require.main === module) {
+if (require.main !== module) {
   exports = module.exports = app
 }
