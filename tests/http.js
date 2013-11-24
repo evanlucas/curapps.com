@@ -36,6 +36,7 @@ var routes = [
   , '/blog/categories/launchctl'
   , '/web/rec'
   , '/web/plaidrhino'
+  , '/web/mostlymacies'
   , '/sitemap.xml'
 ]
 
