@@ -3,7 +3,7 @@ var WEB = exports
 WEB.sites = {
   rec: {
     name: 'The Real Estate Center',
-    url: '/web/rec',
+    url: 'http://therealestatecenterllc.com',
     img: '/img/RECWebsite.png'
   },
   plaidrhino: {
