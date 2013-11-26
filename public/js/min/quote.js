@@ -1,5 +1,5 @@
 /**
- * curapps.com v0.1.3
+ * curapps.com v0.1.4
  * Copyright 2013 Evan Lucas
  * Licensed under the MIT license
  */
