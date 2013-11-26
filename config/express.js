@@ -30,7 +30,12 @@ module.exports = function(app) {
   app.set('views', config.root+'/views')
   app.set('view engine', 'jade')
   app.set('view options', {doctype: 'html', pretty: false})
+
   app.configure(function() {
+    app.use(function(req, res, next) {
+      req.log = app.log
+      next()
+    })
     app.use(express.favicon(config.root+'/public/img/favicon.ico'))
     app.use(viewHelpers(config))
     app.use(express.cookieParser())
