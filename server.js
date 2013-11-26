@@ -1,18 +1,13 @@
 var env           = process.env.NODE_ENV || 'development'
   , fs            = require('fs')
-  , processNumber = process.env.INDEX_OF_PROCESS || 0
   , color         = require('colors')
+  , bunyan        = require('bunyan')
   , config
 
-var log = require('npmlog')
-log.heading = 'curapps'
+var log = new bunyan.createLogger({
+  name: 'curapps'
+})
 
-if (require.main === module) {
-  console.log = log.info.bind(log)
-  console.error = log.error.bind(log)
-  console.info = log.verbose.bind(log)
-  console.warn = log.warn.bind(log)
-}
 
 try {
   config = require('./config/config-priv.js')[env]

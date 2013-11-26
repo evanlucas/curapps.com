@@ -145,7 +145,7 @@ POSTS.renderByIndex = function(req, res) {
         var postContent = fs.readFileSync(postPath, 'utf8')
         marked(postContent, opts, function(err, content) {
           if (err) {
-            console.error('posts', 'Error converting markdown to html:', err)
+            req.log.error('posts', 'Error converting markdown to html:', err)
             return res.render('errors/500')
           } else {
             res.render('single_post', {

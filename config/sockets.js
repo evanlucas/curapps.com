@@ -23,6 +23,7 @@ module.exports = exports = SOCK
 function SOCK(app, io) {
   this.io = io
   this.app = app
+  this.log = app.log
   var self = this
   io.sockets.on('connection', function(socket) {
     methods.forEach(function(method) {
@@ -44,7 +45,7 @@ SOCK.prototype.getSupport = function(data, socket) {
     if (res && !res.is_valid) {
       return socket.emit('getSupportError', 'Invalid email')
     }
-    if (err) console.error('support', 'Error validating email: ', err)
+    if (err) self.log.error('support', 'Error validating email: ', err)
     msg.from = email
     msg.to = 'evan@curapps.com'
     msg.subject = 'Curapps Web Support Request'
@@ -69,7 +70,7 @@ SOCK.prototype.getSupport = function(data, socket) {
     ].join("\n")
     transport.sendMail(msg, function(err) {
       if (err) {
-        console.error('support', 'Error sending support request', err)
+        self.log.error('support', 'Error sending support request', err)
         socket.emit('getSupportError', 'There was an error sending your support request')
       } else {
         socket.emit('getSupportSuccess', 'Successfully submitted support request')
@@ -90,7 +91,7 @@ SOCK.prototype.getQuote = function(data, socket) {
     if (res && !res.is_valid) {
       return socket.emit('getQuoteError', 'Invalid email')
     }
-    if (err) console.error('quote', 'Error validating email: ', err)
+    if (err) self.log.error('quote', 'Error validating email: ', err)
     msg.from = email
     msg.to = 'evan@curapps.com'
     msg.subject = 'Curapps Web Quote Request'
@@ -116,7 +117,7 @@ SOCK.prototype.getQuote = function(data, socket) {
     ].join("\n")
     transport.sendMail(msg, function(err) {
       if (err) {
-        console.error('quote', 'Error sending quote request')
+        self.log.error('quote', 'Error sending quote request')
         socket.emit('getQuoteError', 'There was an error sending your quote request')
       } else {
         socket.emit('getQuoteSuccess', 'Successfully submitted quote request')
@@ -136,7 +137,7 @@ SOCK.prototype.contactUs = function(data, socket) {
     if (res && !res.is_valid) {
       return socket.emit('contactUsError', 'Invalid email')
     }
-    if (err) console.error('contact', 'Error validating email: ', err)
+    if (err) self.log.error('contact', 'Error validating email: ', err)
     msg.from = email
     msg.to = 'evan@curapps.com'
     msg.subject = 'Curapps Web Contact Request'
@@ -161,7 +162,7 @@ SOCK.prototype.contactUs = function(data, socket) {
     ].join("\n")
     transport.sendMail(msg, function(err) {
       if (err) {
-        console.error('contact', 'Error sending support request', err)
+        self.log.error('contact', 'Error sending support request', err)
         socket.emit('contactUsError', 'There was an error sending your contact request')
       } else {
         socket.emit('contactUsSuccess', 'Successfully submitted contact request')
