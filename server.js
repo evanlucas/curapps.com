@@ -2,12 +2,14 @@ var env           = process.env.NODE_ENV || 'development'
   , fs            = require('fs')
   , color         = require('colors')
   , bunyan        = require('bunyan')
+  , serializers   = require('bunyan-serializers')
   , config
 
 process.title = 'curapps'
 
 var log = new bunyan.createLogger({
-  name: 'curapps'
+  name: 'curapps',
+  serializers: serializers
 })
 
 
