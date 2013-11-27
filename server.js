@@ -4,6 +4,8 @@ var env           = process.env.NODE_ENV || 'development'
   , bunyan        = require('bunyan')
   , config
 
+process.title = 'curapps'
+
 var log = new bunyan.createLogger({
   name: 'curapps'
 })
@@ -46,7 +48,7 @@ var port = config.port
 server.listen(port)
 new (require('./config/sockets'))(app, io)
 var date = moment().format('MMM Do, YYYY [at] hh:mm:ss A')
-log.info('listen', port.toString(), date.cyan)
+log.info('listen', port.toString(), date.cyan, env)
 
 if (require.main !== module) {
   exports = module.exports = app
