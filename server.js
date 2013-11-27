@@ -1,3 +1,4 @@
+require('newrelic')
 var env           = process.env.NODE_ENV || 'development'
   , fs            = require('fs')
   , color         = require('colors')

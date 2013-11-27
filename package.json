@@ -27,7 +27,8 @@
     "connect-redis": "~1.4.5",
     "highlight.js": "~7.3.0",
     "bunyan": "~0.22.0",
-    "bunyan-serializers": "0.0.1"
+    "bunyan-serializers": "0.0.1",
+    "newrelic": "~1.1.1"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
