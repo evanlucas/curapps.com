@@ -1,5 +1,7 @@
-var mailer = require('nodemailer')
-  , env    = process.env.NODE_ENV || 'development'
+var mailer      = require('nodemailer')
+  , env         = process.env.NODE_ENV || 'development'
+  , mongoose    = require('mongoose')
+  , Event       = mongoose.model('ClickEvent')
   , config
 
 try {
@@ -16,6 +18,7 @@ var methods = [
     'getSupport'
   , 'getQuote'
   , 'contactUs'
+  , 'request'
 ]
 
 module.exports = exports = SOCK
@@ -168,5 +171,22 @@ SOCK.prototype.contactUs = function(data, socket) {
         socket.emit('contactUsSuccess', 'Successfully submitted contact request')
       }
     })
+  })
+}
+
+SOCK.prototype.request = function(data, socket) {
+  var self = this
+    , id = data.id
+    , type = data.type
+    , name = data.name
+  var event = new Event()
+  event.req = data.id || null
+  event.name = data.name || null
+  event.type = data.type || 'Application'
+  self.log.info('saving request', event)
+  event.save(function(err) {
+    if (err) {
+      self.log.error('request', 'error saving event', err)
+    }
   })
 }

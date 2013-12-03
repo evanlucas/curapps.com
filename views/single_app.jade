@@ -1,5 +1,6 @@
 extends layouts/default
 - app = (typeof app != 'undefined') ? app : {}
+- trackingId = (typeof trackingId != 'undefined') ? trackingId : '-1'
 block pageTitle
   title curapps | apps - #{app.name}
 block metaDesc
@@ -9,19 +10,23 @@ block metaKeywords
 block mainContent
   .row
     .app-detail.span12
-      h3 #{app.name}
+      h3.appName #{app.name}
       .span5
         div.app-img
           img(src=app.img)
       div.span6
         .app-desc
           p !{app.desc}
+          span.track(data-id=trackingId)
           p.supported Supports #{app.supported}
           - if (app.storeType == 'cydia')
             .getapp
-              a(href=app.storeUrl, target="_blank").btn.btn-primary Download on Cydia
+              a(href=app.storeUrl, target="_blank").btn.btn-primary.storeBtn Download on Cydia
           - else if (app.storeType == 'appstore')
             .getapp
-              a(href=app.storeUrl, target="_blank").appstore
+              a(href=app.storeUrl, target="_blank").appstore.storeBtn
           - else
             .getapp
+block extraScripts
+  +js('/socket.io/socket.io.js')
+  +js('/js/app.js')

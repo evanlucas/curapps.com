@@ -19,10 +19,9 @@ exports.record = function(req, res, next) {
     r.save(function(err) {
       if (err) {
         req.log.error('reports', 'Error saving page request', err)
-        return next()
-      } else {
-        return next()
       }
+      req.trackingId = res.locals.trackingId = r.id
+      next()
     })
   }
 }

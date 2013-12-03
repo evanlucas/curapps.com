@@ -23,6 +23,7 @@ var express  = require('express')
   , moment   = require('moment')
 
 mongoose.connect(config.db)
+require('./models/event')
 require('./models/request')
 if (!fs.existsSync(config.posts_path)) {
   log.info('mkdir', 'Creating posts path...')
