@@ -1,6 +1,6 @@
 {
   "name": "curapps",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "curapps website",
   "main": "server.js",
   "scripts": {
