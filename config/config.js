@@ -8,6 +8,7 @@ module.exports = {
     posts_config_path: path.join(root, 'posts.json'),
     port: 4000,
     mailgunPubKey: '',
+    newrelic: '',
     mailTransport: {
       service: 'Mailgun',
       auth: {
@@ -67,6 +68,7 @@ module.exports = {
     posts_config_path: path.join(root, 'posts.json'),
     port: 4000,
     mailgunPubKey: '',
+    newrelic: '',
     mailTransport: {
       service: 'Mailgun',
       auth: {
@@ -126,6 +128,7 @@ module.exports = {
     posts_config_path: path.join(root, 'posts.json'),
     port: 4000,
     mailgunPubKey: '',
+    newrelic: '',
     mailTransport: {
       service: 'Mailgun',
       auth: {

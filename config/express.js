@@ -34,6 +34,7 @@ module.exports = function(app) {
   app.configure(function() {
     app.use(function(req, res, next) {
       req.log = app.log
+      app.log.trace({ req: req })
       next()
     })
     app.use(express.favicon(config.root+'/public/img/favicon.ico'))
