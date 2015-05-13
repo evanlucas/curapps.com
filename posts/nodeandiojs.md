@@ -1,6 +1,6 @@
 Recently, I've seen a few people asking about running both [node.js](https://nodejs.org) and [iojs](https://iojs.org) concurrently, especially during the development lifecycle of an application. There are a couple of routes that one can take to accomplish this.
 
-## `node-bin` / `iojs-bin`
+## node-bin / iojs-bin
 
 Both [node-bin](https://github.com/aredridel/node-bin) and [iojs-bin](https://github.com/aredridel/iojs-bin) are packages on the [npm](https://npmjs.org) registry. They can be installed like any other package.
 
@@ -38,7 +38,7 @@ Thanks to [@aredridel](https://twitter.com/aredridel) for `node-bin` and `iojs-b
 
 ***
 
-## `nvm`
+## nvm
 
 A slightly different solution to solve this problem would be to use a version manager like [nvm](https://github.com/creationix/nvm). One can follow the instructions in the readme to install `nvm`.
 
@@ -64,7 +64,7 @@ $ nvm use 0.10
 
 ***
 
-## `n`
+## n
 
 Being that my preferred shell is `fish` and `nvm` does not work with `fish`, I had to explore other alternatives. Enter [n](https://github.com/tj/n).
 
