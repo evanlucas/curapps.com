@@ -74,6 +74,21 @@ POSTS.posts = {
         keywords: 'launchctl, node.js, nodejs, mac, launchd'
       },
       id: 3
+    },
+    4: {
+      title: 'Developing with node and iojs'
+    , author: 'Evan Lucas'
+    , preview: 'Recently, I\'ve seen a few people asking about running both <a href="https://nodejs.org">node.js</a> and <a href="https://iojs.org">iojs</a> concurrently, especially during the development lifecycle of an application. There are a couple of routes that one can take to accomplish this.'
+    , createdAt: 'May 13, 2015'
+    , filename: 'nodeandiojs.md'
+    , categories: [
+        'Node.js'
+      , 'iojs'
+      ]
+    , meta: {
+        description: 'Developing with node and iojs'
+      , keywords: 'node.js, nodejs, node, iojs, io.js'
+      }
     }
 };
 
