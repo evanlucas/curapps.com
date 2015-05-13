@@ -89,6 +89,7 @@ POSTS.posts = {
         description: 'Developing with node and iojs'
       , keywords: 'node.js, nodejs, node, iojs, io.js'
       }
+    , id: 4
     }
 };
 
